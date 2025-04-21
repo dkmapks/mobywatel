@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --main-color: rgb(41, 41, 41);
+    --error-color: rgb(206, 29, 29);
+}
+
+/**Styling**/
+
+.warning{
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+    font-size: 13px;
+}
+
+.instagram{
+    margin-bottom: 50px;
+    cursor: pointer;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-radius: 10px;
+    transition: 200ms;
+    margin-top: -5px;
+    box-shadow: 0px 0px 20px rgb(153, 153, 153);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.hamburger {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.hamburger:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--main-color);
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.hamburger span:nth-child(3) { bottom: 0; }
+
+.theme-panel {
+    position: fixed;
+    top: 70px;
+    right: -300px;
+    width: 280px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.theme-panel.active {
+    right: 20px;
+}
+
+.theme-panel h3 {
+    margin: 0 0 20px 0;
+    color: var(--main-color);
+    font-size: 18px;
+}
+
+.theme-creator {
+    width: 90%;
+    margin: 20px auto;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.theme-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.theme-option {
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.theme-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.color-preview {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.theme-option[data-theme="default"] .color-preview {
+    background: linear-gradient(45deg, #4CAF50, #2196F3);
+}
+
+.theme-option[data-theme="dark"] .color-preview {
+    background: linear-gradient(45deg, #2c3e50, #34495e);
+}
+
+.theme-option[data-theme="neon"] .color-preview {
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+}
+
+.theme-option[data-theme="gradient"] .color-preview {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+
+.theme-option.active {
+    border: 2px solid #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255,255,255,0.5); }
+    50% { box-shadow: 0 0 20px rgba(255,255,255,0.8); }
+    100% { box-shadow: 0 0 5px rgba(255,255,255,0.5); }
+}
+
+.theme-option:active {
+    transform: scale(0.98);
+}
+
+/* Reszta kodu jest dostępna w repozytorium */
