@@ -20,8 +20,7 @@ function clearClassList(){
 }
 
 var time = document.getElementById("time");
-// Poprawiona definicja options, aby miesiąc i dzień miały wiodące zera
-var options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+var options = { year: 'numeric', month: 'numeric', day: '2-digit' };
 var optionsTime = { second: 'numeric', minute: 'numeric', hour: '2-digit' };
 
 if (localStorage.getItem("update") == null){
